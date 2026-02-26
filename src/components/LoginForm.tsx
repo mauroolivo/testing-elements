@@ -16,12 +16,7 @@ export default function LoginForm({ onSubmit }: LoginFormProps) {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      role="form"
-      aria-label="Login form"
-      aria-labelledby="login-form-heading"
-    >
+    <form onSubmit={handleSubmit} aria-label="form">
       <h3 id="login-form-heading" className="sr-only">
         Sign in
       </h3>

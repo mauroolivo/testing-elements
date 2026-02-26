@@ -23,4 +23,11 @@ describe('LoginForm', () => {
       password: 's3cr3t',
     });
   });
+  it('has proper aria attributes', () => {
+    render(<LoginForm />);
+
+    const form = screen.getByRole('form');
+    expect(form).toBeInTheDocument();
+    expect(form).toHaveAriaLabelForm();
+  });
 });
