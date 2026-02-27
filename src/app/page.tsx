@@ -3,6 +3,21 @@ import LoginForm from '@/components/LoginForm';
 import FakeLinks from '@/components/FakeLinks';
 import StatusBadge from '@/components/StatusBadge';
 
+/**
+ * a11y
+ * 1st: eslint plugin
+ * 2nd: axe-core for runtime testing in dev (see below)
+ * 3rd: browser extensions for manual testing
+ */
+import React from 'react';
+import ReactDOM from 'react-dom';
+console.log('Loading axe-core for accessibility testing...');
+if (process.env.NODE_ENV !== 'production') {
+  import('@axe-core/react').then((axe) => {
+    axe.default(React, ReactDOM, 1000);
+  });
+}
+
 export default function Home() {
   function handleLogin(data: { username: string; password: string }) {
     // placeholder handler for the demo page

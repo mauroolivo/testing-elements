@@ -7,9 +7,9 @@ export default function FakeLinks() {
   return (
     <>
       <article>Some article content</article>
-      <address role="address">Some address</address>
+      <address>Some address</address>
       <nav>Some additional nav</nav>
-      <nav aria-label="fake-links">
+      <nav role="navigation" aria-label="fake-links">
         <ul>
           {links.map((l) => (
             <li key={l.href}>
