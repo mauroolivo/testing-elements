@@ -12,6 +12,7 @@ import StatusBadge from '@/components/StatusBadge';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import EventsTrigger from '@/components/EventsTrigger';
+import SquareGame from '@/components/SquareGame';
 console.log('Loading axe-core for accessibility testing...');
 if (process.env.NODE_ENV !== 'production') {
   import('@axe-core/react').then((axe) => {
@@ -50,6 +51,7 @@ export default function Home() {
             <div className="pt-2">
               <EventsTrigger />
             </div>
+            <SquareGame />
           </div>
         </div>
       </main>
