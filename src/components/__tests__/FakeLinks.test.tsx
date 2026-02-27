@@ -15,7 +15,9 @@ describe('FakeLinks', () => {
 
     const navs = screen.getAllByRole('navigation');
     expect(navs).toHaveLength(2);
-    const address = screen.getByRole('address');
+    // <address> is a semantic HTML element, not an ARIA role.
+    // Use text lookup to assert its presence.
+    const address = screen.getByText('Some address');
     expect(address).toBeInTheDocument();
 
     const alert = screen.queryByRole('alert');
