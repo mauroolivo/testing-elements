@@ -13,6 +13,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import EventsTrigger from '@/components/EventsTrigger';
 import SquareGame from '@/components/SquareGame';
+import ColorCircles from '@/components/ColorCircles';
 console.log('Loading axe-core for accessibility testing...');
 if (process.env.NODE_ENV !== 'production') {
   import('@axe-core/react').then((axe) => {
@@ -52,6 +53,7 @@ export default function Home() {
               <EventsTrigger />
             </div>
             <SquareGame />
+            <ColorCircles />
           </div>
         </div>
       </main>
