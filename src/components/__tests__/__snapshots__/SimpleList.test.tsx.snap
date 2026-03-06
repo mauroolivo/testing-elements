@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleList matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      aria-label="date-now"
+    >
+      06/03/2026, 13:34:56
+    </div>
+    <ul
+      aria-label="verbs-list"
+    >
+      <li>
+        be
+      </li>
+      <li>
+        have
+      </li>
+      <li>
+        do
+      </li>
+      <li>
+        say
+      </li>
+      <li>
+        get
+      </li>
+      <li>
+        make
+      </li>
+      <li>
+        go
+      </li>
+      <li>
+        know
+      </li>
+      <li>
+        take
+      </li>
+      <li>
+        see
+      </li>
+      <li>
+        come
+      </li>
+      <li>
+        think
+      </li>
+      <li>
+        look
+      </li>
+      <li>
+        want
+      </li>
+      <li>
+        give
+      </li>
+      <li>
+        use
+      </li>
+      <li>
+        find
+      </li>
+      <li>
+        tell
+      </li>
+      <li>
+        ask
+      </li>
+      <li>
+        work
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

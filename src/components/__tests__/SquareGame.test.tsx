@@ -32,7 +32,7 @@ test('SquareGame resizes from 100x100 to 150x150 on click', async () => {
 
   // initial computed dimensions (stubbed)
   let rect = square.getBoundingClientRect();
-  console.log('Initial rect:', rect);
+
   expect(rect.width).toBe(100);
   expect(rect.height).toBe(100);
 
