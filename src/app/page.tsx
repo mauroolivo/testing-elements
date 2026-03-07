@@ -14,6 +14,7 @@ import EventsTrigger from '@/components/EventsTrigger';
 import SquareGame from '@/components/SquareGame';
 import ColorCircles from '@/components/ColorCircles';
 import UsersTable from '@/components/UsersTable';
+import ImageGallery from '@/components/ImageGallery';
 // axe-core should only run in the browser/dev — initialize inside the
 // client component effect to avoid server-side `window` access.
 
@@ -68,6 +69,7 @@ export default function Home() {
             <ColorCircles />
           </div>
           <UsersTable />
+          <ImageGallery title="Example Gallery" />
         </div>
       </main>
     </div>
