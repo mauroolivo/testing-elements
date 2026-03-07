@@ -9,19 +9,31 @@ import StatusBadge from '@/components/StatusBadge';
  * 2nd: axe-core for runtime testing in dev (see below)
  * 3rd: browser extensions for manual testing
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect } from 'react';
 import EventsTrigger from '@/components/EventsTrigger';
 import SquareGame from '@/components/SquareGame';
 import ColorCircles from '@/components/ColorCircles';
-console.log('Loading axe-core for accessibility testing...');
-if (process.env.NODE_ENV !== 'production') {
-  import('@axe-core/react').then((axe) => {
-    axe.default(React, ReactDOM, 1000);
-  });
-}
+import UsersTable from '@/components/UsersTable';
+// axe-core should only run in the browser/dev — initialize inside the
+// client component effect to avoid server-side `window` access.
 
 export default function Home() {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      void (async () => {
+        try {
+          const axeModule = await import('@axe-core/react');
+          const ReactDOM =
+            (await import('react-dom'))?.default ?? (await import('react-dom'));
+          axeModule.default(React, ReactDOM, 1000);
+          console.log('axe-core initialized for accessibility testing');
+        } catch (e) {
+          // swallow — only for dev tooling
+          console.warn('Failed to load axe-core for accessibility testing', e);
+        }
+      })();
+    }
+  }, []);
   function handleLogin(data: { username: string; password: string }) {
     // placeholder handler for the demo page
     // in real app, call your auth API here
@@ -55,6 +67,7 @@ export default function Home() {
             <SquareGame />
             <ColorCircles />
           </div>
+          <UsersTable />
         </div>
       </main>
     </div>

@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsersListFetch matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <ul
+      aria-label="users-list-fetch"
+      style="list-style: none; padding: 0px; margin: 0px;"
+    >
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 1
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user1
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user1@example.com • 000-000-0001
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City1 — Company1 — site1.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 2
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user2
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user2@example.com • 000-000-0002
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City2 — Company2 — site2.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 3
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user3
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user3@example.com • 000-000-0003
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City3 — Company3 — site3.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 4
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user4
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user4@example.com • 000-000-0004
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City4 — Company4 — site4.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 5
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user5
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user5@example.com • 000-000-0005
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City5 — Company5 — site5.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 6
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user6
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user6@example.com • 000-000-0006
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City6 — Company6 — site6.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 7
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user7
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user7@example.com • 000-000-0007
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City7 — Company7 — site7.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 8
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user8
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user8@example.com • 000-000-0008
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City8 — Company8 — site8.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 9
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user9
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user9@example.com • 000-000-0009
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City9 — Company9 — site9.com
+        </div>
+      </li>
+      <li
+        style="padding: 12px 8px; border-bottom: 1px solid #e5e7eb;"
+      >
+        <div
+          style="display: flex; justify-content: space-between; gap: 12px;"
+        >
+          <div
+            style="font-weight: 600;"
+          >
+            User 10
+          </div>
+          <div
+            style="color: rgb(107, 114, 128);"
+          >
+            user10
+          </div>
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          user10@example.com • 000-000-00010
+        </div>
+        <div
+          style="margin-top: 6px; color: rgb(55, 65, 81);"
+        >
+          City10 — Company10 — site10.com
+        </div>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

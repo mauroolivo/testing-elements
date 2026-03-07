@@ -57,4 +57,14 @@ describe('customMath', () => {
       expect(math.divide(9, 3)).toBe(3);
     });
   });
+
+  test('mockImplementation example: override add behavior', () => {
+    const math = customMath();
+    const spy = jest.spyOn(math, 'add').mockImplementation((a: number, b: number) => a * b);
+
+    expect(math.add(2, 3)).toBe(6);
+    expect(spy).toHaveBeenCalledWith(2, 3);
+
+    spy.mockRestore();
+  });
 });
