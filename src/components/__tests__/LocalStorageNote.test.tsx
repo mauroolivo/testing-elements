@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import LocalStorageNote from '../LocalStorageNote';
 
 describe('LocalStorageNote', () => {
@@ -26,24 +27,27 @@ describe('LocalStorageNote', () => {
     jest.resetAllMocks();
   });
 
-  test('loads the saved note from localStorage', () => {
+  test('loads the saved note from localStorage', async () => {
     const getItemMock = window.localStorage.getItem as jest.Mock;
     getItemMock.mockReturnValue('Read more tests');
 
     render(<LocalStorageNote />);
 
+    // wait for effect to run and UI to update
+    const input = await screen.findByDisplayValue('Read more tests');
+    const message = await screen.findByText('Saved note: Read more tests');
+
     expect(window.localStorage.getItem).toHaveBeenCalledWith('favorite-note');
-    expect(screen.getByDisplayValue('Read more tests')).toBeInTheDocument();
-    expect(screen.getByText('Saved note: Read more tests')).toBeInTheDocument();
+    expect(input).toBeInTheDocument();
+    expect(message).toBeInTheDocument();
   });
 
-  test('saves the typed note to localStorage', () => {
+  test('saves the typed note to localStorage', async () => {
     render(<LocalStorageNote />);
+    const user = userEvent.setup();
 
-    fireEvent.change(screen.getByLabelText('Note'), {
-      target: { value: 'Practice Jest mocks' },
-    });
-    fireEvent.click(screen.getByRole('button', { name: 'Save note' }));
+    await user.type(screen.getByLabelText('Note'), 'Practice Jest mocks');
+    await user.click(screen.getByRole('button', { name: 'Save note' }));
 
     expect(window.localStorage.setItem).toHaveBeenCalledWith(
       'favorite-note',

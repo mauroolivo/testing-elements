@@ -16,6 +16,7 @@ import ColorCircles from '@/components/ColorCircles';
 import UsersTable from '@/components/UsersTable';
 import ImageGallery from '@/components/ImageGallery';
 import LocalStorageNote from '@/components/LocalStorageNote';
+import Counter from '@/components/Counter';
 // axe-core should only run in the browser/dev — initialize inside the
 // client component effect to avoid server-side `window` access.
 
@@ -72,6 +73,7 @@ export default function Home() {
           <UsersTable />
           <ImageGallery title="Example Gallery" />
           <LocalStorageNote />
+          <Counter />
         </div>
       </main>
     </div>

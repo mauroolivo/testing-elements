@@ -1,30 +1,38 @@
 'use client';
 
-import React, { JSX, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 
 const STORAGE_KEY = 'favorite-note';
 
 export default function LocalStorageNote(): JSX.Element {
-  const [note, setNote] = useState(() => {
-    try {
-      return window.localStorage.getItem(STORAGE_KEY) ?? '';
-    } catch {
-      return '';
-    }
-  });
+  const [state, setState] = useState(() => ({
+    note: '',
+    savedMessage: 'No saved note yet.',
+  }));
 
-  const [savedMessage, setSavedMessage] = useState(() => {
+  useEffect(() => {
     try {
-      const n = window.localStorage.getItem(STORAGE_KEY) ?? '';
-      return n ? `Saved note: ${n}` : 'No saved note yet.';
+      const n = window.localStorage.getItem(STORAGE_KEY);
+      if (n) {
+        // defer the state update to the next microtask to avoid
+        // calling setState synchronously inside the effect which
+        // can trigger cascading renders in some React versions.
+        Promise.resolve().then(() =>
+          setState((prev) =>
+            prev.note === n
+              ? prev
+              : { note: n, savedMessage: `Saved note: ${n}` }
+          )
+        );
+      }
     } catch {
-      return 'No saved note yet.';
+      // ignore read errors
     }
-  });
+  }, []);
 
   function handleSave() {
-    window.localStorage.setItem(STORAGE_KEY, note);
-    setSavedMessage(`Saved note: ${note}`);
+    window.localStorage.setItem(STORAGE_KEY, state.note);
+    setState((s) => ({ ...s, savedMessage: `Saved note: ${s.note}` }));
   }
 
   return (
@@ -34,15 +42,17 @@ export default function LocalStorageNote(): JSX.Element {
       <label htmlFor="note-input">Note</label>
       <input
         id="note-input"
-        value={note}
-        onChange={(event) => setNote(event.target.value)}
+        value={state.note}
+        onChange={(event) =>
+          setState((s) => ({ ...s, note: event.target.value }))
+        }
       />
 
       <button type="button" onClick={handleSave}>
         Save note
       </button>
 
-      <p>{savedMessage}</p>
+      <p>{state.savedMessage}</p>
     </section>
   );
 }

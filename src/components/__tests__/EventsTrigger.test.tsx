@@ -14,7 +14,8 @@ test('EventsTrigger demonstrates getBy, queryBy, and findBy', async () => {
   expect(screen.queryByText('Error')).not.toBeInTheDocument();
 
   // click to trigger async success
-  await userEvent.click(btn);
+  const user = userEvent.setup();
+  await user.click(btn);
 
   // findBy - wait for async element
   const msg = await screen.findByText('Success!');
@@ -22,9 +23,9 @@ test('EventsTrigger demonstrates getBy, queryBy, and findBy', async () => {
 
   // now trigger an error state and demonstrate queryBy returning the element
   const errBtn = screen.getByText('Trigger error');
-  await userEvent.click(errBtn);
+  await user.click(errBtn);
   // wait for the async error to appear, then demonstrate `queryBy` returns it
-  
+
   await screen.findByText('Error', {}, { timeout: 1500, interval: 100 });
   const err = screen.queryByText('Error');
   expect(err).toBeInTheDocument();

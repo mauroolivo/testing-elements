@@ -37,7 +37,8 @@ test('SquareGame resizes from 100x100 to 150x150 on click', async () => {
   expect(rect.height).toBe(100);
 
   const btn = screen.getByRole('button', { name: /grow/i });
-  await userEvent.click(btn);
+  const user = userEvent.setup();
+  await user.click(btn);
 
   // after click dimensions should update (inline styles)
   expect(square).toHaveStyle('width: 150px');
