@@ -51,4 +51,17 @@ describe('UsersListFetch', () => {
     await screen.findAllByRole('listitem');
     expect(asFragment()).toMatchSnapshot();
   });
+
+  test('matches snapshot variant', async () => {
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: async () => users,
+      } as Response)
+    ) as typeof fetch;
+
+    const { asFragment } = render(<UsersListFetch />);
+    await screen.findAllByRole('listitem');
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
