@@ -17,6 +17,7 @@ import UsersTable from '@/components/UsersTable';
 import ImageGallery from '@/components/ImageGallery';
 import LocalStorageNote from '@/components/LocalStorageNote';
 import Counter from '@/components/Counter';
+import ScreenSize from '@/components/ScreenSize';
 // axe-core should only run in the browser/dev — initialize inside the
 // client component effect to avoid server-side `window` access.
 
@@ -49,6 +50,7 @@ export default function Home() {
         <div className="mx-auto w-full max-w-2xl rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
           <h1 className="text-2xl font-semibold">Demo Page</h1>
 
+          <ScreenSize />
           <div className="mb-4 flex items-center justify-between">
             <StatusBadge status="success" />
             <div className="text-sm font-semibold text-zinc-600 dark:text-zinc-300">
