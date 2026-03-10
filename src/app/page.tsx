@@ -18,6 +18,7 @@ import ImageGallery from '@/components/ImageGallery';
 import LocalStorageNote from '@/components/LocalStorageNote';
 import Counter from '@/components/Counter';
 import ScreenSize from '@/components/ScreenSize';
+import PostViewer from '@/components/PostViewer';
 // axe-core should only run in the browser/dev — initialize inside the
 // client component effect to avoid server-side `window` access.
 
@@ -76,6 +77,7 @@ export default function Home() {
           <ImageGallery title="Example Gallery" />
           <LocalStorageNote />
           <Counter />
+          <PostViewer id={1} />
         </div>
       </main>
     </div>
