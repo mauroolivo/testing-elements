@@ -12,12 +12,17 @@ import {
   todosSlice,
   toggleTodo,
 } from './slices/todosSlice';
+import {
+  fetchPostComments,
+  postCommmentsSlice,
+} from './slices/postCommmentsSlice';
 import { login, logout, userSlice } from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterSlice.reducer,
     todos: todosSlice.reducer,
+    postComments: postCommmentsSlice.reducer,
     user: userSlice.reducer,
   },
 });
@@ -30,6 +35,7 @@ export {
   addTodo,
   toggleTodo,
   clearCompleted,
+  fetchPostComments,
   login,
   logout,
 };

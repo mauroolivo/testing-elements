@@ -24,6 +24,7 @@ describe('CounterBox', () => {
   const baseState: RootState = {
     counter: { value: 0, status: 'idle' },
     todos: [],
+    postComments: { comments: [], status: 'idle', error: null },
     user: { name: '', isLoggedIn: false },
   };
 
