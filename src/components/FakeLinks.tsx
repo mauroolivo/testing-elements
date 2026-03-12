@@ -8,8 +8,8 @@ export default function FakeLinks() {
     <>
       <article>Some article content</article>
       <address>Some address</address>
-      <nav>Some additional nav</nav>
-      <nav role="navigation" aria-label="fake-links">
+      <p>Some additional nav</p>
+      <nav aria-label="Fake links">
         <ul>
           {links.map((l) => (
             <li key={l.href}>

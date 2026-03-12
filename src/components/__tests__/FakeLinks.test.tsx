@@ -5,7 +5,7 @@ describe('FakeLinks', () => {
   it('renders 10 fake links', () => {
     render(<FakeLinks />);
 
-    const nav = screen.getByRole('navigation', { name: /fake-links/i });
+    const nav = screen.getByRole('navigation', { name: /fake links/i });
     expect(nav).toBeInTheDocument();
 
     const links = screen.getAllByRole('link');
@@ -14,7 +14,7 @@ describe('FakeLinks', () => {
     expect(links[9]).toHaveTextContent('Link 10');
 
     const navs = screen.getAllByRole('navigation');
-    expect(navs).toHaveLength(2);
+    expect(navs).toHaveLength(1);
     // <address> is a semantic HTML element, not an ARIA role.
     // Use text lookup to assert its presence.
     const address = screen.getByText('Some address');
