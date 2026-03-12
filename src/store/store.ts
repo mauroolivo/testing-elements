@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import {
   addByAmount,
+  addByAmountAsync,
   counterSlice,
   decrement,
   increment,
@@ -25,6 +26,7 @@ export {
   increment,
   decrement,
   addByAmount,
+  addByAmountAsync,
   addTodo,
   toggleTodo,
   clearCompleted,
