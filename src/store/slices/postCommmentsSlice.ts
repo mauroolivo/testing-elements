@@ -1,14 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-type PostComment = {
+export type PostComment = {
   postId: number;
   id: number;
   name: string;
   email: string;
   body: string;
 };
-
-type postCommmentsState = {
+export type postCommmentsState = {
   comments: PostComment[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
