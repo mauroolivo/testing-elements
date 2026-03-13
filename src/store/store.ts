@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { albumsSlice, fetchAlbums } from './slices/albumsSlice';
 import {
   addByAmount,
   addByAmountAsync,
@@ -20,6 +21,7 @@ import { login, logout, userSlice } from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
+    albums: albumsSlice.reducer,
     counter: counterSlice.reducer,
     todos: todosSlice.reducer,
     postComments: postCommmentsSlice.reducer,
@@ -35,6 +37,7 @@ export {
   addTodo,
   toggleTodo,
   clearCompleted,
+  fetchAlbums,
   fetchPostComments,
   login,
   logout,

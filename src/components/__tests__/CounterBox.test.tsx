@@ -26,6 +26,7 @@ describe('CounterBox', () => {
     todos: [],
     postComments: { comments: [], status: 'idle', error: null },
     user: { name: '', isLoggedIn: false },
+    albums: { items: [], status: 'idle', error: null },
   };
 
   beforeEach(() => {
