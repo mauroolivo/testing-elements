@@ -8,6 +8,7 @@ type Album = {
 
 export const albumsApi = createApi({
   reducerPath: 'albumsApi',
+  tagTypes: ['Albums'],
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://jsonplaceholder.typicode.com',
     fetchFn: (...args) => {
@@ -21,8 +22,20 @@ export const albumsApi = createApi({
   endpoints: (builder) => ({
     getAlbums: builder.query<Album[], void>({
       query: () => '/albums',
+      providesTags: (result) =>
+        result
+          ? [
+              { type: 'Albums' as const, id: 'LIST' },
+              ...result.map((a) => ({ type: 'Albums' as const, id: a.id })),
+            ]
+          : [{ type: 'Albums' as const, id: 'LIST' }],
+    }),
+    addAlbum: builder.mutation<Album, Partial<Album>>({
+      query: (body) => ({ url: '/albums', method: 'POST', body }),
+      invalidatesTags: [{ type: 'Albums', id: 'LIST' }],
     }),
   }),
 });
 
 export const { useGetAlbumsQuery } = albumsApi;
+export const { useAddAlbumMutation } = albumsApi;

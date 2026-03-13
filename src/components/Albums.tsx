@@ -1,13 +1,30 @@
 'use client';
 
-import { useGetAlbumsQuery } from '@/store/services/albumsApi';
+import { useDispatch } from 'react-redux';
+import { useGetAlbumsQuery, albumsApi } from '@/store/services/albumsApi';
 
 export default function Albums() {
-  const { data, isLoading, isError, error, isSuccess } = useGetAlbumsQuery();
+  const dispatch = useDispatch();
+  const { data, isLoading, isFetching, isError, error, isSuccess, refetch } =
+    useGetAlbumsQuery();
+
+  const handleInvalidate = () => {
+    dispatch(albumsApi.util.invalidateTags([{ type: 'Albums', id: 'LIST' }]));
+    refetch();
+  };
 
   return (
     <section className="mt-6 w-full max-w-2xl rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
-      <h2 className="text-xl font-semibold">Albums</h2>
+      <div className="flex items-center justify-between">
+        <h2 className="text-xl font-semibold">Albums</h2>
+        <button
+          onClick={handleInvalidate}
+          disabled={isFetching}
+          className="rounded bg-blue-500 px-3 py-1 text-white hover:bg-blue-600 disabled:opacity-60"
+        >
+          {isFetching ? 'Refreshing…' : 'Invalidate & refetch'}
+        </button>
+      </div>
 
       {isLoading && (
         <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
