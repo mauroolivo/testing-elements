@@ -1,6 +1,7 @@
 'use client';
 
 import { Provider } from 'react-redux';
+import { UserProvider } from '@/context/UserContext';
 import { store } from '@/store/store';
 
 type ProvidersProps = {
@@ -8,5 +9,9 @@ type ProvidersProps = {
 };
 
 export default function Providers({ children }: ProvidersProps) {
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <UserProvider>{children}</UserProvider>
+    </Provider>
+  );
 }

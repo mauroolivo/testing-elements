@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Link from 'next/link';
+import UserSessionControls from '@/components/UserSessionControls';
 import './globals.css';
 import Providers from './providers';
 
@@ -29,30 +30,43 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav
-          aria-label="Primary"
-          className="sticky top-0 z-10 border-b border-zinc-200 bg-white/95 px-6 py-3 backdrop-blur dark:border-zinc-700 dark:bg-zinc-900/95"
-        >
-          <ul className="mx-auto flex w-full max-w-4xl items-center gap-6 text-sm font-medium">
-            <li>
-              <Link
-                href="/"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/redux"
-                className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
-              >
-                Redux
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <Providers>{children}</Providers>
+        <Providers>
+          <nav
+            aria-label="Primary"
+            className="sticky top-0 z-10 border-b border-zinc-200 bg-white/95 px-6 py-3 backdrop-blur dark:border-zinc-700 dark:bg-zinc-900/95"
+          >
+            <div className="mx-auto flex w-full max-w-4xl items-center gap-6 text-sm font-medium">
+              <ul className="flex items-center gap-6">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/redux"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Redux
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/profile"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Profile
+                  </Link>
+                </li>
+              </ul>
+              <UserSessionControls />
+            </div>
+          </nav>
+          {children}
+        </Providers>
       </body>
     </html>
   );
