@@ -22,11 +22,11 @@ const mockedUseAppSelector = useAppSelector as unknown as jest.MockedFunction<
 describe('CounterBox', () => {
   const dispatchMock = jest.fn();
   const baseState: RootState = {
+    albumsApi: {} as RootState['albumsApi'],
     counter: { value: 0, status: 'idle' },
     todos: [],
     postComments: { comments: [], status: 'idle', error: null },
     user: { name: '', isLoggedIn: false },
-    albums: { items: [], status: 'idle', error: null },
   };
 
   beforeEach(() => {

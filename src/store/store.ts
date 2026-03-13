@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { albumsSlice, fetchAlbums } from './slices/albumsSlice';
+import { albumsApi } from './services/albumsApi';
 import {
   addByAmount,
   addByAmountAsync,
@@ -21,12 +21,14 @@ import { login, logout, userSlice } from './slices/userSlice';
 
 export const store = configureStore({
   reducer: {
-    albums: albumsSlice.reducer,
+    [albumsApi.reducerPath]: albumsApi.reducer,
     counter: counterSlice.reducer,
     todos: todosSlice.reducer,
     postComments: postCommmentsSlice.reducer,
     user: userSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(albumsApi.middleware),
 });
 
 export {
@@ -37,7 +39,6 @@ export {
   addTodo,
   toggleTodo,
   clearCompleted,
-  fetchAlbums,
   fetchPostComments,
   login,
   logout,
