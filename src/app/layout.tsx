@@ -61,6 +61,14 @@ export default function RootLayout({
                     Profile
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/protected"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Protected
+                  </Link>
+                </li>
               </ul>
               <UserSessionControls />
             </div>
