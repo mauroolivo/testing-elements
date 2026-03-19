@@ -69,6 +69,14 @@ export default function RootLayout({
                     Protected
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/performance"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Performance
+                  </Link>
+                </li>
               </ul>
               <UserSessionControls />
             </div>
