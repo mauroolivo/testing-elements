@@ -61,7 +61,7 @@ export default function RateApplication() {
 
         <button
           type="submit"
-          className="mt-2 w-fit rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-500"
+          className="mt-2 w-fit rounded-full bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800"
         >
           Submit rating
         </button>

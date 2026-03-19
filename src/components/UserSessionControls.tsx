@@ -45,7 +45,7 @@ export default function UserSessionControls() {
           type="button"
           onClick={onSignIn}
           disabled={loading}
-          className="rounded-full bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-full bg-sky-700 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-60"
         >
           Login
         </button>
