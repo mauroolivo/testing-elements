@@ -77,6 +77,14 @@ export default function RootLayout({
                     Performance
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/react-window"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    React Window
+                  </Link>
+                </li>
               </ul>
               <UserSessionControls />
             </div>
