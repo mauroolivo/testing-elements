@@ -85,6 +85,14 @@ export default function RootLayout({
                     React Window
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/request-lab"
+                    className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-200 dark:hover:text-white"
+                  >
+                    Request Lab
+                  </Link>
+                </li>
               </ul>
               <UserSessionControls />
             </div>
